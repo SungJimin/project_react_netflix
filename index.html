@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    
 </head>
 <body>
+    <div id="root"></div>
 </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script> <!-- ReactJS? 엔진. 아주 interactive UI를 만들 수 있게 하는 library. -->
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script> <!-- ReactDOM? library, 또는 package. 모든 React element들을 HTML body에 둘 수 있도록 해준다. -->
+    <script>
+        // render를 위한 root Element 정의
+        const root = document.getElementById("root");
+
+        // React JS Element 만들기
+        // createElement function을 가진 React Object에 접근할 수 있다.
+        const span = React.createElement( 
+            // React.createElement("태그", {class name 또는 id 같은 태그의 property}, "태그에 들어갈 내용 등의 argument")
+            "span",
+            {id:"sexy-span", style: {color: "red"}}, 
+            "Hello, I'm a span :)"
+            ) 
+
+        // rebder? ReactElement를 가지고 HTML로 만들어 배치한다는 의미. 
+        ReactDOM.render(span, root) // ReactDOM.render(태그, 위치)
+    </script>
 </html>
